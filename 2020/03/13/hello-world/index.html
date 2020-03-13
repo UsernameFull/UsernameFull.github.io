@@ -158,46 +158,55 @@ hexo server</code></pre>
 <ol>
 <li>找GitHub要<a href="https://github.com/settings/tokens/new" target="_blank" rel="noopener">Token</a></li>
 <li>打开项目设置，在Secrets加一个GH_TOKEN，值就是刚才的Token</li>
-<li>在项目里新建.github/workflows/abc.yml，把以下内容贴上去<pre><code class="yml">name: Hexo deployer # Actions 名字
-</code></pre>
-</li>
+<li>在项目里新建.github/workflows/abc.yml，把以下内容贴上去</li>
 </ol>
-<p>on: # 触发条件<br>  push:<br>    branches:<br>      - master # 仅向 master 分支 push 时触发，该分支存放博客源文件</p>
-<p>jobs:<br>  build: # job id<br>    name: Build and publish # job 名，不写默认使用 job id<br>    runs-on: ubuntu-latest # 运行环境，可选 ubuntu-latest, ubuntu-18.04, ubuntu-16.04, windows-latest, windows-2019, windows-2016, macOS-latest, macOS-10.14</p>
-<pre><code>steps:
-  - uses: actions/checkout@v1 # 拉取博客最新源文件
+<pre><code class="yml">name: Hexo deployer # Actions 名字
 
-  - name: Use Node.js 10.x # 指定 Node.js 版本
-    uses: actions/setup-node@v1
-    with:
-      node-version: 10.x
+on: # 触发条件
+  push:
+    branches:
+      - master # 仅向 master 分支 push 时触发，该分支存放博客源文件
 
-  - name: Setup Hexo env # 初始化 Hexo 环境
-    run: |
-      npm install hexo-cli -g
-      npm install
+jobs:
+  build: # job id
+    name: Build and publish # job 名，不写默认使用 job id
+    runs-on: ubuntu-latest # 运行环境，可选 ubuntu-latest, ubuntu-18.04, ubuntu-16.04, windows-latest, windows-2019, windows-2016, macOS-latest, macOS-10.14
 
-  - name: Generate public files # 生成博客预发布文件
-    run: |
-      hexo clean
-      hexo g  
+    steps:
+      - uses: actions/checkout@v1 # 拉取博客最新源文件
 
-  - name: Deploy # 发布
-    env:
-      GH_REF: github.com/username/username.github.io.git # GitHub 仓库 SSH 地址
-      GH_TOKEN: ${{ secrets.GH_TOKEN }} # 预先生成 GitHub Token
-    run: |
-      git config --global user.name &quot;username&quot;
-      git config --global user.email &quot;user@email.com&quot;
-      git clone https://${GH_REF} .deploy_git
-      cd .deploy_git
-      git checkout master
-      cd ../
-      mv .deploy_git/.git/ ./public/
-      cd ./public/
-      git add .
-      git commit -m &quot;CI built at `date +&quot;%Y-%m-%d %H:%M:%S&quot;`&quot;
-      git push --force --quiet &quot;https://${GH_TOKEN}@${GH_REF}&quot; master:master</code></pre><p>```<br>然后就是<code>add</code> <code>commit</code> <code>push</code>三连，不出意外的话，GitHub Page就应该跑起来了。接下来就是折腾下hexo。</p>
+      - name: Use Node.js 10.x # 指定 Node.js 版本
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+
+      - name: Setup Hexo env # 初始化 Hexo 环境
+        run: |
+          npm install hexo-cli -g
+          npm install
+
+      - name: Generate public files # 生成博客预发布文件
+        run: |
+          hexo clean
+          hexo g  
+
+      - name: Deploy # 发布
+        env:
+          GH_REF: github.com/username/username.github.io.git # GitHub 仓库 SSH 地址
+          GH_TOKEN: ${{ secrets.GH_TOKEN }} # 预先生成 GitHub Token
+        run: |
+          git config --global user.name &quot;username&quot;
+          git config --global user.email &quot;user@email.com&quot;
+          git clone https://${GH_REF} .deploy_git
+          cd .deploy_git
+          git checkout master
+          cd ../
+          mv .deploy_git/.git/ ./public/
+          cd ./public/
+          git add .
+          git commit -m &quot;CI built at `date +&quot;%Y-%m-%d %H:%M:%S&quot;`&quot;
+          git push --force --quiet &quot;https://${GH_TOKEN}@${GH_REF}&quot; master:master</code></pre>
+<p>然后就是<code>add</code> <code>commit</code> <code>push</code>三连，不出意外的话，GitHub Page就应该跑起来了。接下来就是折腾下hexo。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
