@@ -141,10 +141,10 @@
 <p>实际上GitHub官方有意无意地推荐使用<a href="http://jekyllcn.com/" target="_blank" rel="noopener">Jekyll</a>来做静态博客。不过Jekyll是采用<code>Ruby</code>写的，本地预览还要搭环境。还是用node下的<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>比较对我胃口。思路有了，那就开工做呗。</p>
 <p>博客嘛，基本上就一静态网页（特别是GitHub Page）。hexo也是比较完善的框架了，使用起来也十分方便。</p>
 <h2 id="Hexo的安装"><a href="#Hexo的安装" class="headerlink" title="Hexo的安装"></a>Hexo的安装</h2><p>hexo 全局安装</p>
-<pre><code class="bash">cnpm i hexo -g</code></pre>
+<pre><code class="shell">cnpm i hexo -g</code></pre>
 <p>由于我已经把全局npm库加到<code>path</code>里了，所以直接在命令行里可以用<code>hexo</code>命令，没加的小伙伴自己加一下<code>path</code>。</p>
 <p>hexo 使用</p>
-<pre><code class="bash">hexo init MyProject
+<pre><code class="shell">hexo init MyProject
 cd MyProject
 hexo server</code></pre>
 <p>这样就能跑了，可以说是相当简单了。然而比较麻烦的是部署，想要部署在GitHub Page上，要<code>hexo generate</code>然后再上传才行，或者使用hexo-deployer-git插件，然后用<code>hexo deploy</code>。但总觉得不够优雅。</p>
@@ -160,7 +160,7 @@ hexo server</code></pre>
 <li>打开项目设置，在Secrets加一个GH_TOKEN，值就是刚才的Token</li>
 <li>在项目里新建.github/workflows/abc.yml，把以下内容贴上去</li>
 </ol>
-<pre><code class="yml">name: Hexo deployer # Actions 名字
+<pre><code class="yaml">name: Hexo deployer # Actions 名字
 
 on: # 触发条件
   push:
@@ -414,7 +414,11 @@ jobs:
 
 
     
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/yml/yml.min.js"></script>
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/yaml/yaml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
 
 
 
