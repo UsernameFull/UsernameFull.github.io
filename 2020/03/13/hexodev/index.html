@@ -99,7 +99,7 @@ theme: your_t,">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    729
+                    892
                 </span>
                 
                 
@@ -109,11 +109,11 @@ theme: your_t,">
                 </span>
                 
                 
-                
-                <span id="busuanzi_container_page_pv">
+                <span id="/2020/03/13/hexodev/" class="leancloud_visitors" data-flag-title="hexodev">
                     <b class="iconfont icon-read"></b> <i>Read count</i>
-                    <span id="busuanzi_value_page_pv">0</span>
+                    <span class="leancloud-visitors-count">1000000</span>
                 </span>
+                
                 
             </p>
             
@@ -140,7 +140,8 @@ theme: your_t,">
             <h2 id="hexo换主题"><a href="#hexo换主题" class="headerlink" title="hexo换主题"></a>hexo换主题</h2><p><code>hexo</code>主题还是蛮多的<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网</a>给了相当多的示范<del>（白嫖）</del>。用法也十分简单，把相关主题资源文件夹放在themes下，然后再根目录_config.yml里改改就可以。</p>
 <pre><code class="yaml">theme: your_theme #你选择的主题名</code></pre>
 <h2 id="hexo图片支持"><a href="#hexo图片支持" class="headerlink" title="hexo图片支持"></a>hexo图片支持</h2><p>这个问题hexo官方的做法是<a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">这样</a>，不是很懂hexo的思路，应该是让大家养成整理文件目录的好习惯吧🙃。</p>
-<h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>由于我采用的是obsidian主题，自带了两个评论方式<code>Valine</code> 和 <code>Gitalk</code>，我个人感觉Valine</p>
+<h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>由于我采用的是obsidian主题，自带了两个评论方式<code>Valine</code> 和 <code>Gitalk</code>，我个人感觉由于<code>Gitalk</code>会在前端暴露自己的<code>OAuth Apps</code>的ID和Secret。<br><img src="gittalk.jpg" alt="愚蠢的外露写法"></p>
+<p>可以去GitHub官网看下，这个权限还是比较大的，因而还是选Valine。使用没什么说的，照着教程一步步走就行。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -154,18 +155,7 @@ theme: your_t,">
             
             
             
-    <div id='gitalk-container' class="comment link"
-        data-ae='true'
-        data-ci='dd46a03a877fbb9ef101'
-        data-cs='6848e5b4bc8e919ab39d37631ff8e5463a07f115'
-        data-r='UsernameFull.github.io'
-        data-o='UsernameFull'
-        data-a='UsernameFull'
-        data-d=''
-    >Comments</div>
-
-
-            
+            <div id="vcomments"></div>
             
         </div>
         <div class="sidebar">
@@ -285,13 +275,6 @@ theme: your_t,">
 
 
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-
-    
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-
-
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
@@ -352,17 +335,6 @@ theme: your_t,">
 
 
 
-
-    
-<script src="/js/busuanzi.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            if ($('span[id^="busuanzi_"]').length) {
-                initialBusuanzi();
-            }
-        });
-    </script>
 
 
 
@@ -459,6 +431,40 @@ theme: your_t,">
     }
 </script>
 
+
+    
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+    <script>
+
+        var valine = new Valine();
+
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
+            let language = 'en';
+            if (!language) {
+                language = 'en';
+            } else {
+                language = language.toLowerCase();
+            }
+            valine.init({
+                el: '#vcomments',
+                appId: 'tx1GBQemT72xU8L6jvsWwEJ0-gzGzoHsz',
+                appKey: '9VRtffzA9BncXSJD0VGC2alh',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: 'true',
+                path: path,
+                lang: language
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        });
+    </script>
 
 
 

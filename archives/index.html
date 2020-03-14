@@ -192,13 +192,6 @@ hexo图片支持这个问题hexo官方的做法是这样，不是很懂hexo的�
 
 
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-
-    
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-
-
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
@@ -259,17 +252,6 @@ hexo图片支持这个问题hexo官方的做法是这样，不是很懂hexo的�
 
 
 
-
-    
-<script src="/js/busuanzi.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            if ($('span[id^="busuanzi_"]').length) {
-                initialBusuanzi();
-            }
-        });
-    </script>
 
 
 
@@ -366,6 +348,40 @@ hexo图片支持这个问题hexo官方的做法是这样，不是很懂hexo的�
     }
 </script>
 
+
+    
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+    <script>
+
+        var valine = new Valine();
+
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
+            let language = 'en';
+            if (!language) {
+                language = 'en';
+            } else {
+                language = language.toLowerCase();
+            }
+            valine.init({
+                el: '#vcomments',
+                appId: 'tx1GBQemT72xU8L6jvsWwEJ0-gzGzoHsz',
+                appKey: '9VRtffzA9BncXSJD0VGC2alh',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: 'true',
+                path: path,
+                lang: language
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        });
+    </script>
 
 
 
