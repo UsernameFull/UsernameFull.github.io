@@ -99,13 +99,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    1.6k
+                    2.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    1 mins.
+                    2 mins.
                 </span>
                 
                 
@@ -174,7 +174,7 @@
 </tr>
 <tr>
 <td>入射孔径</td>
-<td>5*5mm</td>
+<td>10*10mm</td>
 </tr>
 <tr>
 <td>入射角</td>
@@ -182,6 +182,39 @@
 </tr>
 </tbody></table>
 <p>由于视场角为<code>10度</code>也就是要压缩一半的入射角，下一步就是设计<del>抄</del>一个压缩角度的光路图。</p>
+<p>压缩角度的光学系统的实际上相当于一反向望远镜。因而目标也很明确了，就是选取一种望远镜设计，然后倒置光路即可。望远镜可粗略分为折射式，反射式。折反射式。求简单的话一般采用折射式。采用反射式多是为了节省空间。这里就用折射式<del>偷懒不做离轴光学系统</del>。</p>
+<p>技术在这里又分出两派了，是采用伽利略式还是采用开普勒式。两者的主要区别是中间有无实像。参考的各方资料上两种流派都有。由于压缩比不大，同时伽利略式结构更为简单紧凑。因此这里采用反伽利略式结构。<br>备忘：评价手段为波前图和波像差<br>设计参数表</p>
+<table>
+<thead>
+<tr>
+<th>物理量</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>入射直径</td>
+<td>5mm</td>
+</tr>
+<tr>
+<td>出射直径</td>
+<td>10mm</td>
+</tr>
+<tr>
+<td>波长范围</td>
+<td>400-900nm</td>
+</tr>
+<tr>
+<td>入射角度</td>
+<td>±10°</td>
+</tr>
+</tbody></table>
+<p>步骤</p>
+<ol>
+<li>设置入瞳直径/这里为无焦系统，设置入瞳为浮动，同时勾上无焦选项<br><img src="%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE.PNG" alt="基本设置"></li>
+<li>设置视场角和波长.视场设置三个角，分别为0°，7°（对应最大视场的0.7倍），10°。波长等距设置6个，为400，500，600，700，800，900nm。<br> <img src="%E8%A7%86%E5%9C%BA.PNG" alt="视场"><br> <img src="%E6%B3%A2%E9%95%BF.PNG" alt="波长"></li>
+<li>设置优化函数，采用PTV作为优化函数，波前作为指标，即让波前差最小<br> <img src="%E4%BC%98%E5%8C%96%E5%87%BD%E6%95%B0.PNG" alt="优化函数"><br> 优化函数中还应添加<code>REAY</code>操作数，用来控制放大率和孔径。可知应控制出射半高为5mm，则应设置Py为1（开普勒型），Target为5</li>
+<li>抄初始参数，卡死中</li>
+</ol>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -241,7 +274,7 @@
         <span class="percentage animated fadeIn faster">0%</span>
         <span class="iconfont icon-top02 animated fadeIn faster"></span>
     </div>
-<script src="/live2d_models/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d_models/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2d_models/assets/z16.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":100,"vOffset":-20},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<script src="/live2d_models/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d_models/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":true,"model":{"jsonPath":"/live2d_models/assets/assets/rfb_1601.model.json"},"display":{"superSample":2,"width":200,"height":300,"position":"right","hOffset":100,"vOffset":-20},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 <footer>
     <p class="copyright" id="copyright">
         &copy; 2020
