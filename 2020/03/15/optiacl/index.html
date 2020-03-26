@@ -99,13 +99,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    4.5k
+                    3.2k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    4 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -208,7 +208,7 @@
 <td>±10°</td>
 </tr>
 </tbody></table>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>步骤</p>
+<p>步骤</p>
 <ol>
 <li><p>设置入瞳直径/这里为无焦系统，设置入瞳10mm，同时勾上无焦选项<br> <img src="%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE.PNG" alt="基本设置"></p>
 </li>
@@ -222,28 +222,7 @@
 </li>
 </ol>
 <h2 id="设计AOTF"><a href="#设计AOTF" class="headerlink" title="设计AOTF"></a>设计AOTF</h2><p>这里要用到用户自定义曲面UDS功能，同时需要AOTF的详细参数。暂时摸了。</p>
-<h2 id="设计后置成像镜头"><a href="#设计后置成像镜头" class="headerlink" title="设计后置成像镜头"></a>设计后置成像镜头</h2><h1 id="后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考抄。"><a href="#后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考抄。" class="headerlink" title="后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考抄。"></a>后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考<del>抄</del>。</h1><p>步骤</p>
-<ol>
-<li>设置入瞳直径/这里为无焦系统，设置入瞳为浮动，同时勾上无焦选项<br><img src="%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE.PNG" alt="基本设置"></li>
-<li>设置视场角和波长.视场设置三个角，分别为0°，7°（对应最大视场的0.7倍），10°。波长等距设置6个，为400，500，600，700，800，900nm。<br> <img src="%E8%A7%86%E5%9C%BA.PNG" alt="视场"><br> <img src="%E6%B3%A2%E9%95%BF.PNG" alt="波长"></li>
-<li>设置优化函数，采用PTV作为优化函数，波前作为指标，即让波前差最小<br> <img src="%E4%BC%98%E5%8C%96%E5%87%BD%E6%95%B0.PNG" alt="优化函数"><br> 优化函数中还应添加<code>REAY</code>操作数，用来控制放大率和孔径。可知应控制出射半高为5mm，则应设置Py为1（开普勒型），Target为5</li>
-<li>抄初始参数，卡死中<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>950529f6c8ce55b41b3b8a9dc4b7b6c0470e5ba0</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ol>
+<h2 id="设计后置成像镜头"><a href="#设计后置成像镜头" class="headerlink" title="设计后置成像镜头"></a>设计后置成像镜头</h2><p>后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考<del>抄</del>。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -287,7 +266,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#毕业设计笔记-AOTF成像系统"><span class="toc-number">1.</span> <span class="toc-text">毕业设计笔记-AOTF成像系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计要求"><span class="toc-number">1.2.</span> <span class="toc-text">设计要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计步骤"><span class="toc-number">1.3.</span> <span class="toc-text">设计步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置镜头设计"><span class="toc-number">1.4.</span> <span class="toc-text">前置镜头设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计AOTF"><span class="toc-number">1.5.</span> <span class="toc-text">设计AOTF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计后置成像镜头"><span class="toc-number">1.6.</span> <span class="toc-text">设计后置成像镜头</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考抄。"><span class="toc-number">2.</span> <span class="toc-text">后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考抄。</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#毕业设计笔记-AOTF成像系统"><span class="toc-number">1.</span> <span class="toc-text">毕业设计笔记-AOTF成像系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计要求"><span class="toc-number">1.2.</span> <span class="toc-text">设计要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计步骤"><span class="toc-number">1.3.</span> <span class="toc-text">设计步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置镜头设计"><span class="toc-number">1.4.</span> <span class="toc-text">前置镜头设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计AOTF"><span class="toc-number">1.5.</span> <span class="toc-text">设计AOTF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计后置成像镜头"><span class="toc-number">1.6.</span> <span class="toc-text">设计后置成像镜头</span></a></li></ol></li></ol>
                 </div>
             </div>
             
