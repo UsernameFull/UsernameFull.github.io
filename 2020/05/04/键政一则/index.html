@@ -5,13 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>optiacl - 摸鱼的日常</title>
+    <title>键政一则 - 摸鱼的日常</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="js hexo,毕业设计笔记-AOTF成像系统参考资料主要参考李永帅. 大视场声光可调谐光谱相机成像系统设计[D].中北大学,2015.其实还有很多，这里只列出最主要的一篇。
-设计要求设计对于通光孔径为8mm的声光,"> 
+    <meta name="description" content="js hexo,代码哪有键政好玩啊🙃
+说明主要内容：个人关于国内资本组织架构的理解（缝合）
+思路来源：马克思+福柯
+推荐书籍：《资本论》《规训与惩罚》《白领：美国的中产阶级》待补充。。。
+叙事思路：资本的自我增殖,"> 
     <meta name="author" content="UsernameFull"> 
     <link rel="alternative" href="atom.xml" title="摸鱼的日常" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -58,7 +61,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://UsernameFull.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">optiacl</h3>
+        <h3 class="subtitle">键政一则</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -90,26 +93,26 @@
                 
                 <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
                 
-                三月 15, 2020
+                五月 04, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/03/15/optiacl/" title="optiacl" class="">optiacl</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/05/04/%E9%94%AE%E6%94%BF%E4%B8%80%E5%88%99/" title="键政一则" class="">键政一则</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    3.3k
+                    1.8k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    3 mins.
+                    2 mins.
                 </span>
                 
                 
-                <span id="/2020/03/15/optiacl/" class="leancloud_visitors" data-flag-title="optiacl">
+                <span id="/2020/05/04/键政一则/" class="leancloud_visitors" data-flag-title="键政一则">
                     <b class="iconfont icon-read"></b> <i>阅读次数</i>
                     <span class="leancloud-visitors-count">1000000</span>
                 </span>
@@ -137,93 +140,25 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="毕业设计笔记-AOTF成像系统"><a href="#毕业设计笔记-AOTF成像系统" class="headerlink" title="毕业设计笔记-AOTF成像系统"></a>毕业设计笔记-AOTF成像系统</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>主要参考<a href="https://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CMFD&dbname=CMFD201502&filename=1015584711.nh&v=MTY1MTk4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUjdxZlpPZHFGeTNuV3J6S1ZGMjZHN2F3R3RiTnJwRWJQSVI=" target="_blank" rel="noopener">李永帅. 大视场声光可调谐光谱相机成像系统设计[D].中北大学,2015.</a><br>其实还有很多，这里只列出最主要的一篇。</p>
-<h2 id="设计要求"><a href="#设计要求" class="headerlink" title="设计要求"></a>设计要求</h2><p>设计对于通光孔径为<code>8mm</code>的声光可调谐滤波器件，工作波长为<code>400-900nm</code>，设计视场角为<code>10度</code>的光学系统。</p>
-<h2 id="设计步骤"><a href="#设计步骤" class="headerlink" title="设计步骤"></a>设计步骤</h2><ol>
-<li>设计前置准直镜头</li>
-<li>设计AOTF</li>
-<li>设计后置成像镜头</li>
-</ol>
-<h2 id="前置镜头设计"><a href="#前置镜头设计" class="headerlink" title="前置镜头设计"></a>前置镜头设计</h2><p>本来应该用的是Brimrose公司的<code>TEAFI10-0.4-1.0-L-MSD</code>晶体，<a href="https://www.bihec.com/brimrose/%E5%A3%B0%E5%85%89%E5%8F%AF%E8%B0%83%E8%B0%90%E6%BB%A4%E6%B3%A2%E5%99%A8/" target="_blank" rel="noopener">手册地址</a>。</p>
-<table>
-<thead>
-<tr>
-<th>物理量</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>工作波长</td>
-<td>400-1000nm</td>
-</tr>
-<tr>
-<td>谱线分辨率</td>
-<td>1.6-20 nm (2.5 nm @ 450 nm; 13 nm @ 800 nm)</td>
-</tr>
-<tr>
-<td>衍射效率</td>
-<td>60-70%</td>
-</tr>
-<tr>
-<td>频率范围</td>
-<td>220 -130 – 65 MHz</td>
-</tr>
-<tr>
-<td>分离角</td>
-<td>5.3°-6.8°</td>
-</tr>
-<tr>
-<td>入射孔径</td>
-<td>10*10mm</td>
-</tr>
-<tr>
-<td>入射角</td>
-<td>4°-6°</td>
-</tr>
-</tbody></table>
-<p>由于视场角为<code>10度</code>也就是要压缩一半的入射角，下一步就是设计<del>抄</del>一个压缩角度的光路图。</p>
-<p>压缩角度的光学系统的实际上相当于一反向望远镜。因而目标也很明确了，就是选取一种望远镜设计，然后倒置光路即可。望远镜可粗略分为折射式，反射式。折反射式。求简单的话一般采用折射式。采用反射式多是为了节省空间。这里就用折射式<del>偷懒不做离轴光学系统</del>。</p>
-<p>技术在这里又分出两派了，是采用伽利略式还是采用开普勒式。两者的主要区别是中间有无实像。参考的各方资料上两种流派都有。由于压缩比不大，同时伽利略式结构更为简单紧凑。因此这里采用反伽利略式结构。<br>备忘：评价手段为波前图和波像差<br>设计参数表</p>
-<table>
-<thead>
-<tr>
-<th>物理量</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>入射直径</td>
-<td>5mm</td>
-</tr>
-<tr>
-<td>出射直径</td>
-<td>10mm</td>
-</tr>
-<tr>
-<td>波长范围</td>
-<td>400-900nm</td>
-</tr>
-<tr>
-<td>入射角度</td>
-<td>±10°</td>
-</tr>
-</tbody></table>
-<p>步骤</p>
+            <p>代码哪有键政好玩啊🙃</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>主要内容：个人关于国内资本组织架构的理解<del>（缝合）</del></p>
+<p>思路来源：马克思+福柯</p>
+<p>推荐书籍：《资本论》《规训与惩罚》《白领：美国的中产阶级》待补充。。。</p>
+<p>叙事思路：资本的自我增殖和组织膨胀，主要是组织膨胀的围观结构。其中马克思的理论提供大方向，即资本主义的最大需求-增殖，福柯提供组织技术实现。可以理解为化学中热力学和动力学的关系，在我看来这两种理论完全不冲突，反而相互补充。</p>
+<h2 id="组织结构"><a href="#组织结构" class="headerlink" title="组织结构"></a>组织结构</h2><p>实际上所有人都知道，组织结构是金字塔型的，底层多，顶层少。一层层叠加。这里要阐述的是一个通用结构，也就是金字塔相邻两层之间的结构-边沁的圆形监狱。</p>
+<p><img src="%E7%9B%91%E7%8B%B1.jpg" alt="边沁的圆形监狱"></p>
+<p>一目了然的结构，简单的二元对立，狱警-囚犯，狱警位于圆形监狱的中央，能随时掌握所有囚犯的状况，囚犯则只有一面视野仅能看到狱警。</p>
+<p><img src="%E5%9B%9A%E7%8A%AF.jpg" alt="囚犯视角"></p>
+<p>在我看来，圆形监狱有三大特点：</p>
 <ol>
-<li><p>设置入瞳直径/这里为无焦系统，设置入瞳10mm，同时勾上无焦选项<br> <img src="%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE.PNG" alt="基本设置"></p>
-</li>
-<li><p>设置视场角和波长.视场设置三个角，分别为0°，7°（对应最大视场的0.7倍），10°。波长等距设置6个，为400，500，600，700，800，900nm。<br> <img src="%E8%A7%86%E5%9C%BA.PNG" alt="视场"><br> <img src="%E6%B3%A2%E9%95%BF.PNG" alt="波长"></p>
-</li>
-<li><p>采用一对称凹透镜和一双胶合透镜的组合，先做出这两块透镜，然后采用操作数<code>EFLY</code>（指定两面之间的焦距）分别设置其焦距为-50和100。注意此时仅设置透镜曲率为变量，避免出现奇怪的优化结果。</p>
-</li>
-<li><p>上一步操作完成后再仅设置两透镜距离为变量，采用<code>RAID</code>操作数来设置出射光线的平行度。完成后，系统放大倍率应为0.5。然后插入<code>PTV</code>法下的波前优化函数。</p>
-</li>
-<li><p>然后开始优化，看波前峰谷差来进行评价。在这里我大致优化到2λ量级。后续优化就是换玻璃，调初始结构之类的，比较玄学。就先告一段落了。</p>
-</li>
+<li>极端的不对称性，一个狱警对应多个囚犯，并且在边沁的设想中，狱警是躲在单向透明玻璃后的，囚犯无法通过观察来判断狱警当前的监视目标，只能时刻保持警惕。在后续版本中狱警实际上也是受着囚犯的监督，这个更符合实际情形，同时也能规范狱警的行为。</li>
+<li>被监视的囚犯之间不能交流，他们仅能掌握自身和部分狱警的信息。</li>
+<li>圆形监狱是可以递归的，多个狱警可以同样被典狱长监视，1-&gt;N-&gt;N<sup>2</sup>,最终套娃的结果就是存在一个拥有系统权限的GM</li>
 </ol>
-<h2 id="设计AOTF"><a href="#设计AOTF" class="headerlink" title="设计AOTF"></a>设计AOTF</h2><p>这里要用到用户自定义曲面UDS功能，同时需要AOTF的详细参数。暂时摸了。</p>
-<h2 id="设计后置成像镜头"><a href="#设计后置成像镜头" class="headerlink" title="设计后置成像镜头"></a>设计后置成像镜头</h2><p>后置成像镜头实际上就是一不同成像镜头，同时视场角小（±10°）。在多光谱成像时对色差要求低（毕竟前面加了滤光片，光谱宽度在10nm量级）。因而设计起来比较简单。成像镜头发展了几百年，出现了相当多的构型。这里我准备尝试的有库克三片式镜头、天塞镜头、四片式镜头和高斯镜头。这里就不大可能直接设计了，一般是从镜头手册中参考<del>抄</del>。</p>
-<p>参考书是福建光机所出版的《光学镜头手册全册》，同时由于波段与可见光波段相差不大，基本上常见的镜头都能拿来用。一般AOTF设计都比较紧凑（考虑到工作环境要求）所以需要设计短焦距F数比较小的镜头。同样还是求简单，镜头数少比较好。</p>
+<p>圆形监狱是一种夸张的手法，在实际资本组织架构中，圆形监狱的许多要素都被削弱了，圆形监狱的监视人数可达上百，，现实中工头监视人数在10左右（员工行为越接近囚犯行为（机械化行为），工头可监管人数越多，反之越少）。同时员工之间是可以相互交流的，不过隔了一个办公室后的交流成本要大得多，在这种情况下跨科室的交流主要靠主管们完成，员工依然是事实上的囚徒，自然会面临囚徒困境的情景，也就避免不了工贼的出现。</p>
+<h2 id="整体分析"><a href="#整体分析" class="headerlink" title="整体分析"></a>整体分析</h2><p>以上分析是十分初级的，十分不完善的分析，但已经足够说明一些问题。在现实社会中，圆形监狱也不是一天建立起来的，资本有增殖的天性（不增殖就会别其他资本吞并），组织同样会扩展，但这个扩展是半有意识的，从监狱到军队，再到学校，医院，当大企业出现的时候，圆形监狱（管理学）已经是一门艺术了，资本毫不犹豫地接纳了它。在出现一些小创新时（@狼性文化），其他会迅速传播开，毕竟“先进”的组织意味着先进的生产力，意味着资本增殖。</p>
+<p>在增殖的过程中，实际上越来越多的人卷入这个体系（看看我国的城镇化率变化），金字塔是越来越高的，同时金字塔的底层承担的压强也是越来越大（金字塔的体积与边长的三次方成正比，底面积与边长的二次方成正比）。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>以上分析其实同样可以套在政府上，但我认为资本逻辑下的金字塔体系比政治上的金字塔体系更为糟糕（其实这两个沆瀣一气不知道多久了）。原因如下毕竟在人民交出自己的一部分权力组建宪政政府时还有本宪法约束，同时存在名义上的有限政府、权力分立、代议民主、司法独立等原则。政府掌握了公权力后是有向公民负责的义务，同时也接受公民的监督。在垄断托拉斯的故事里，托拉斯事实上掌握这一部分公权力，但并不负担相应的义务，但却缺少还监督，实际上这部分的工作一般由政府在做。。。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -267,7 +202,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#毕业设计笔记-AOTF成像系统"><span class="toc-number">1.</span> <span class="toc-text">毕业设计笔记-AOTF成像系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计要求"><span class="toc-number">1.2.</span> <span class="toc-text">设计要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计步骤"><span class="toc-number">1.3.</span> <span class="toc-text">设计步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置镜头设计"><span class="toc-number">1.4.</span> <span class="toc-text">前置镜头设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计AOTF"><span class="toc-number">1.5.</span> <span class="toc-text">设计AOTF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计后置成像镜头"><span class="toc-number">1.6.</span> <span class="toc-text">设计后置成像镜头</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组织结构"><span class="toc-number">2.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整体分析"><span class="toc-number">3.</span> <span class="toc-text">整体分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a></li></ol>
                 </div>
             </div>
             
