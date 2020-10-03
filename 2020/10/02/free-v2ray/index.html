@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>bolg - 摸鱼的日常</title>
+    <title>free_v2ray - 摸鱼的日常</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="js hexo,GitHub提供了GitHub Page功能，相当于免费开了一个不限量（反正不可能用完）的博客空间，那么，为什么不嫖一下呢🙃
-实际上GitHub官方有意无意地推荐使用Jekyll来做静态博客。不过,"> 
+    <meta name="description" content="js hexo,记一次免费的翻墙手段
+总览由于谷歌云的优惠力度降低，从十二个月的免费期降为三个月，显得不那么有吸引力。然而云服务器厂商之间的斗争从没停止，甲骨文和IBM也想在该领域分一杯羹，IBM甚至号称永久免费一,"> 
     <meta name="author" content="UsernameFull"> 
     <link rel="alternative" href="atom.xml" title="摸鱼的日常" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -58,7 +58,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://UsernameFull.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">bolg</h3>
+        <h3 class="subtitle">free_v2ray</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -90,16 +90,16 @@
                 
                 <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
                 
-                三月 13, 2020
+                十月 02, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/03/13/bolg/" title="bolg" class="">bolg</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/10/02/free-v2ray/" title="free_v2ray" class="">free_v2ray</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    3.8k
+                    3k
                 </span>
                 
                 
@@ -109,7 +109,7 @@
                 </span>
                 
                 
-                <span id="/2020/03/13/bolg/" class="leancloud_visitors" data-flag-title="bolg">
+                <span id="/2020/10/02/free-v2ray/" class="leancloud_visitors" data-flag-title="free_v2ray">
                     <b class="iconfont icon-read"></b> <i>阅读次数</i>
                     <span class="leancloud-visitors-count">1000000</span>
                 </span>
@@ -137,77 +137,34 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <p><code>GitHub</code>提供了<code>GitHub Page</code>功能，相当于免费开了一个不限量（反正不可能用完）的博客空间，那么，为什么不嫖一下呢🙃</p>
-<p>实际上<code>GitHub</code>官方有意无意地推荐使用<a href="http://jekyllcn.com/" target="_blank" rel="noopener">Jekyll</a>来做静态博客。不过Jekyll是采用<code>Ruby</code>写的，本地预览还要搭环境。还是用<code>node</code>下的<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>比较对我胃口。思路有了，那就开工做呗。</p>
-<p>博客嘛，基本上就一静态网页（特别是<code>GitHub Page</code>）。<code>hexo</code>也是比较完善的框架了，使用起来也十分方便。</p>
-<h2 id="Hexo的安装"><a href="#Hexo的安装" class="headerlink" title="Hexo的安装"></a>Hexo的安装</h2><p>hexo 全局安装</p>
-<pre><code class="shell">cnpm i hexo -g</code></pre>
-<p>由于我已经把全局npm库加到<code>path</code>里了，所以直接在命令行里可以用<code>hexo</code>命令，没加的小伙伴自己加一下<code>path</code>。</p>
-<p>hexo 使用</p>
-<pre><code class="shell">hexo init MyProject
-cd MyProject
-hexo server</code></pre>
-<p>这样就能跑了，可以说是相当简单了。然而比较麻烦的是部署，想要部署在<code>GitHub Page</code>上，要<code>hexo generate</code>然后再上传才行，或者使用<code>hexo-deployer-git</code>插件，然后用<code>hexo deploy</code>。但总觉得不够优雅。</p>
-<h2 id="GitHub-Action"><a href="#GitHub-Action" class="headerlink" title="GitHub Action"></a>GitHub Action</h2><p>对于部署这个问题，hexo给出的办法是找第三方<a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">CI</a>。看起来也不错，然而事情当然没这么简单。<br>教程中的第🔟步</p>
-<blockquote>
-<p>在 GitHub 中前往你的 repository 的设置页面，修改 GitHub Pages 的部署分支为 gh-pages。</p>
-</blockquote>
-<p>这步已经失效了，<code>GitHub</code>当前只允许你把站点部署在<code>master</code>分支上。<img src="github.png" alt="坑爹的GitHub"></p>
-<p>这就比较蛋疼了，当然第三方CI也能用，但需要自己写部署文件，尝试了半天都没成功，本来准备放弃的，但看到<code>GitHub</code>的新功能<code>GitHub Actions</code>，发现原来GitHub已经有自己的CI了，这就可以搞搞了。</p>
-<p>参考了网上的众多<a href="https://honye.github.io/posts/eaaf4b45.html" target="_blank" rel="noopener">教程</a>后，发现操作还是比较简单的。</p>
-<p>首先是开两个库，一个私人库来放<code>hexo</code>源文件，另一个就是传统的公开库<code>username.github.io</code>，操作都在<code>hexo</code>源文件库里完成，<code>username.github.io</code>只是被动接受。</p>
-<ol>
-<li>找<code>GitHub</code>要<a href="https://github.com/settings/tokens/new" target="_blank" rel="noopener">Token</a></li>
-<li>打开项目设置，在<code>Secrets</code>加一个<code>GH_TOKEN</code>，值就是刚才的<code>Token</code></li>
-<li>在项目里新建<code>.github/workflows/abc.yml</code>，把以下内容贴上去</li>
+            <p>记一次免费的翻墙手段</p>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>由于谷歌云的优惠力度降低，从十二个月的免费期降为三个月，显得不那么有吸引力。然而云服务器厂商之间的斗争从没停止，甲骨文和IBM也想在该领域分一杯羹，IBM甚至号称永久免费一个256m内存的<a href="https://www.ibm.com/cloud/free" target="_blank" rel="noopener">服务器</a>，不过发现在IBM的机器上用一键v2ray脚本总是无法成功，当我在寻找解决办法时，另一家云服务器提供商进入了我的视线，也就是今天的主角<a href="www.heroku.com"><strong>heroku</strong></a>,<code>heroku</code>同样提供免费服务，同时和IBM一样，仅用就可注册，同时部署更为方便。本次的主要参考是<a href="https://github.com/bclswl0827/v2ray-heroku" target="_blank" rel="noopener">https://github.com/bclswl0827/v2ray-heroku</a>,同时加以<code>cloudflare</code>转发和<code>clash</code>做均衡负载。</p>
+<h2 id="部署v2ray"><a href="#部署v2ray" class="headerlink" title="部署v2ray"></a>部署v2ray</h2><ol>
+<li>注册一个<code>heroku</code>账号，值得注意的是这一步是需要翻墙的，墙内的话谷歌人机验证会无法显示。</li>
+<li>直接点击<a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fbclswl0827%2Fv2ray-heroku" target="_blank" rel="noopener">链接</a>这里应该就可以看到这个界面<img src="heroku.png" alt="克隆v2ray">之后填写app name并修改UUID(不修改的话会使用默认UUID，有一定的风险)，UUID生成工具在<a href="https://www.uuidgenerator.net/" target="_blank" rel="noopener">这里</a>，最后点Deploy app即可</li>
+<li>Deploy成功后应该会得到形式如<a href="https://your_app_name.herokuapp.com/" target="_blank" rel="noopener">https://your_app_name.herokuapp.com/</a>的链接，直接点击进入，如果<code>Bad Request</code>就代表成功，之后打开v2rayN手动添加服务器，相关参数如下图，记得将服务器地址和UUID修改为自己的。<img src="v2ray.png" alt="v2ray设置">之后在v2rayN里测试速度，应该在10k量级，这就代表v2ray部署成功了，下一步就是做转发</li>
 </ol>
-<pre><code class="yaml">name: Hexo deployer # Actions 名字
+<h2 id="cloudflare转发"><a href="#cloudflare转发" class="headerlink" title="cloudflare转发"></a>cloudflare转发</h2><ol>
+<li><p>第一步依然是注册账号</p>
+</li>
+<li><p>注册好以后申请一个worker,并将worker里的内容替换为</p>
+<pre><code class="js"> addEventListener(
+     &quot;fetch&quot;,event =&gt; {
+         let url=new URL(event.request.url);
+         url.hostname=&quot;your_app_name.herokuapp.com&quot;;
+         let request=new Request(url,event.request);
+         event. respondWith(
+         fetch(request)
 
-on: # 触发条件
-  push:
-    branches:
-      - master # 仅向 master 分支 push 时触发，该分支存放博客源文件
-
-jobs:
-  build: # job id
-    name: Build and publish # job 名，不写默认使用 job id
-    runs-on: ubuntu-latest # 运行环境，可选 ubuntu-latest, ubuntu-18.04, ubuntu-16.04, windows-latest, windows-2019, windows-2016, macOS-latest, macOS-10.14
-
-    steps:
-      - uses: actions/checkout@v1 # 拉取博客最新源文件
-
-      - name: Use Node.js 10.x # 指定 Node.js 版本
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-
-      - name: Setup Hexo env # 初始化 Hexo 环境
-        run: |
-          npm install hexo-cli -g
-          npm install
-
-      - name: Generate public files # 生成博客预发布文件
-        run: |
-          hexo clean
-          hexo g  
-
-      - name: Deploy # 发布
-        env:
-          GH_REF: github.com/username/username.github.io.git # GitHub 仓库 SSH 地址
-          GH_TOKEN: ${{ secrets.GH_TOKEN }} # 预先生成 GitHub Token
-        run: |
-          git config --global user.name &quot;username&quot;
-          git config --global user.email &quot;user@email.com&quot;
-          git clone https://${GH_REF} .deploy_git
-          cd .deploy_git
-          git checkout master
-          cd ../
-          mv .deploy_git/.git/ ./public/
-          cd ./public/
-          git add .
-          git commit -m &quot;CI built at `date +&quot;%Y-%m-%d %H:%M:%S&quot;`&quot;
-          git push --force --quiet &quot;https://${GH_TOKEN}@${GH_REF}&quot; master:master</code></pre>
-<p>然后就是<code>add</code> <code>commit</code> <code>push</code>三连，不出意外的话，<code>GitHub Page</code>就应该跑起来了。接下来就是折腾下<code>hexo</code>。</p>
+     }
+ )</code></pre>
+<p> 然后点击send,出现红点🔴<code>400 Bad Request</code>就成功了。之后记得点save。<img src="cloudflare.png" alt="cloudflare设置">这段代码的功能就是做个转发，任何访问该worker的数据都会被转发到<code>your_app_name.herokuapp.com</code>去，同时从<code>your_app_name.herokuapp.com</code>发回worker的数据也会发回原路，本质上是一个二级代理。</p>
+</li>
+<li><p>之后设置v2rayN里的服务器域名为刚才worker的域名，这时候测速应该在300k量级。网上流传寻找最适合自己网络条件的cloudflare ip来提高速度的方法，相关内容可以参考这个帖子，注意heroku的带宽是够的，决定你翻墙带宽的就是cloudflare的速度，所以找一个ip是能提很大程度上提高速度的。</p>
+</li>
+</ol>
+<h2 id="利用clash做均衡负载"><a href="#利用clash做均衡负载" class="headerlink" title="利用clash做均衡负载"></a>利用clash做均衡负载</h2><p>发现这种前端均衡负载并不能做到20+50=70，同时容易跳ip，因此放弃了。具体想做的可以参考<a href="https://wxf2088.xyz/600.html" target="_blank" rel="noopener">这篇文章</a></p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这次利用的是免费“容器”，而不是服务器，原理是基于docker的，刚开始看到的时候还觉得比较新，有点意思，但查了下发下很早以前就有老哥薅这种<a href="https://github.com/sscst/lobbypy-dotcloud" target="_blank" rel="noopener">免费容器的羊毛了</a>还不是别的公司，正是docker创始人Solomon Hykes的建立的公司dotCloud。dotCloud现在已经倒闭了，原因是竞争不过Amazon和Microsoft这种大公司，heroku背靠salesforce这棵大树，但也不是资源无穷的，还是且薅且珍惜吧。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -251,7 +208,7 @@ jobs:
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo的安装"><span class="toc-number">1.</span> <span class="toc-text">Hexo的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-Action"><span class="toc-number">2.</span> <span class="toc-text">GitHub Action</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总览"><span class="toc-number">1.</span> <span class="toc-text">总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署v2ray"><span class="toc-number">2.</span> <span class="toc-text">部署v2ray</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cloudflare转发"><span class="toc-number">3.</span> <span class="toc-text">cloudflare转发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用clash做均衡负载"><span class="toc-number">4.</span> <span class="toc-text">利用clash做均衡负载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写在最后"><span class="toc-number">5.</span> <span class="toc-text">写在最后</span></a></li></ol>
                 </div>
             </div>
             
